@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/script.js"></script>
+    <title>no credit, a wrbb radio show</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="text-center">no credit</h1>
+      <h3 class="text-center">a radio show on <a href="http://www.wrbbradio.org">wrbb</a> 104.9 fm in boston massachusetts</h3>
+    </div>
+
+    <div class="text-center" style="margin-bottom:2rem;">
+      <p>we play deep cuts and talk about things, occasionally our conversations even make sense</p>
+    </div>
+
+    <div class="text-center">
+      <h4>music requests</h4>
+      <p>we rarely take requests but if you have something good, we'll play it</p>
+      <form id="songForm" method="post">
+        <input id="songNameInput" class="big-input" type="text" name="song" placeholder="put your song here"><br>
+        <input id="artistNameInput" class="big-input" type="text" name="artist" placeholder="who the fuck made that shit?"><br>
+        <button onclick="submitSongForm()">play this please</button>
+        <p id="songSuccessMessage" class="d-none">we got your suggestion</p>
+      </form>
+    </div>
+
+    <div class="text-center">
+      <h4>the good, the bad, and the puntable</h4>
+      <span>
+        <label for="gbpInput">submit an item to be rated</label>
+      </span>
+      <input id="gbpInput" type="text" name="item" value="" placeholder="a medium-sized goose">
+    </div>
+  </body>
+  <footer class="text-center">
+    <span>made in 15 minutes by logan wellington</span>
+  </footer>
+</html>
