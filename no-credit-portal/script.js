@@ -20,3 +20,12 @@ function submitSongForm() {
     xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlHttpRequest.send("song=" + songName + "&artist=" + artistName);
 }
+
+function submitGBPEntry() {
+    let xmlHttpRequest = new XMLHttpRequest();
+
+    let itemName = document.getElementById("gbpInput").value;
+
+    console.log("this part of the api isn't set up yet but your item is: " + itemName);
+
+}

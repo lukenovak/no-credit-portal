@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	"log"
 	"net/http"
 )
 
@@ -12,7 +13,7 @@ func InitRouting(router *mux.Router) {
 	router.HandleFunc("/submit/song", addSongRequest)
 	router.HandleFunc("/submit/gbp", addGoodBadPuntableItem)
 	router.Handle("/", http.FileServer(http.Dir("./no-credit-portal")))
-
+	log.Print("Routes have been initialized")
 }
 
 // recieves a song request and sends it to be added to a db

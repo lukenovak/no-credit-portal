@@ -35,3 +35,11 @@ footer {
 .d-none {
   display: none;
 }
+
+.full-width {
+  width:100%;
+}
+
+.d-inline-block {
+  display: inline-block;
+}

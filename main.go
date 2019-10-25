@@ -10,5 +10,6 @@ import (
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	utils.InitRouting(router)
+	log.Print("Server Intialized, and is attempting to start!")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
