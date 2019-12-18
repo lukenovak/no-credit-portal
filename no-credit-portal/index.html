@@ -19,10 +19,10 @@
     <div class="text-center">
       <h4>music requests</h4>
       <p>we rarely take requests but if you have something good, we'll play it</p>
-      <form id="songForm" method="post">
+      <form id="songForm">
         <input id="songNameInput" class="big-input" type="text" name="song" placeholder="put your song here"><br>
         <input id="artistNameInput" class="big-input" type="text" name="artist" placeholder="who the fuck made that shit?"><br>
-        <button onclick="submitSongForm()">play this please</button>
+        <button type="button" onclick="submitSongForm()">play this please</button>
         <p id="songSuccessMessage" class="d-none">we got your suggestion</p>
       </form>
     </div>

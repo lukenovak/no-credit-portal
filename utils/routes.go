@@ -16,17 +16,27 @@ func InitRouting(router *mux.Router) {
 	log.Print("Routes have been initialized")
 }
 
-// recieves a song request and sends it to be added to a db
+// receives a song request and sends it to be added to a db
 func addSongRequest(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	for key, value := range r.Form {
-		fmt.Printf("%s = %s\n", key, value[0])
+	println("got song request")
+	err := r.ParseForm()
+	if err != nil {
+		panic(err)
 	}
+	status, err := AddSongToRequestsTable(r.Form.Get("title"), r.Form.Get("artist"))
+	if err != nil {
+		log.Print("failed to generate a return value while adding song")
+	}
+	fmt.Printf(string(status))
 	w.WriteHeader(200)
 }
 
 func addGoodBadPuntableItem(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
+	err := r.ParseForm()
+	if err != nil {
+		log.Print("unable to parse form")
+		return
+	}
 	item := r.Form.Get("gbp_item")
 	fmt.Print(item)
 }
